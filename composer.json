@@ -22,7 +22,9 @@
   },
   "require": {},
   "require-dev": {
+    "brain/monkey": "^2.2",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+    "phpunit/phpunit": "~5.7.9",
     "squizlabs/php_codesniffer": "^3.2.3",
     "wp-coding-standards/wpcs": "^0.14.1",
     "roave/security-advisories": "dev-master"
@@ -30,6 +32,14 @@
   "autoload": {
     "psr-4": {
       "SEOThemes\\ChildThemeLibrary\\": "src/"
+    },
+    "exclude-from-classmap": [
+      "/tests/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SEOThemes\\ChildThemeLibrary\\Tests\\Unit\\": "tests/phpunit/unit/"
     }
   },
   "suggest": {
@@ -40,7 +50,8 @@
     "sort-order": true
   },
   "scripts": {
-    "phpcs": "phpcs"
+    "phpcs": "phpcs",
+    "phpunit": "phpunit"
   },
   "minimum-stability": "dev",
   "prefer-stable": true
